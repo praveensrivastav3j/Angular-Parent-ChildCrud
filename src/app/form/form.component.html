@@ -1,0 +1,52 @@
+
+<div class="container my-3">
+    <div>
+        <h1>Parent Child CRUD</h1>
+    </div>
+    <div>
+        <form [formGroup]="userForm" (ngSubmit)="SubmitForm()">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">First
+                    Name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" formControlName="fname">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Last
+                    name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" formControlName="lname">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email
+                    address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" formControlName="email">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1"
+                    class="form-label">Password</label>
+                <input type="password" class="form-control"
+                    id="exampleInputPassword1"
+                    formControlName="password">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1"
+                    class="form-label">Address</label>
+                <textarea class="form-control" name id cols="10" rows="3"
+                    formControlName="address"></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit"
+                    class="btn btn-primary me-3">Submit</button>
+                <button type="reset" class="btn btn-danger">Clear</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <app-table (updateData)="updateData($event)"></app-table>
+    </div>
+</div>
+
+<!-- parent: Form -->
+<!-- Child: Table -->
